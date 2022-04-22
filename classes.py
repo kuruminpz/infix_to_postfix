@@ -48,3 +48,4 @@ class Pilha():
         if self.isEmpty():
             raise Exception("Pilha vazia")
         return self.top.valor
+

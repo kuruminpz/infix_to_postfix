@@ -67,7 +67,7 @@ def avaliarPosfixa(expressao):
         return "Expressao invalida"
 
 def isOperador(s):
-    if s == "+" or s == "-" or s == "*" or s == "/" or s == "$":
+    if s == "+" or s == "-" or s == "*" or s == "/":
         return True
     else:
         return False
@@ -90,3 +90,30 @@ def prioridade(c, t):
         prio_t = 0
 
     return prio_c <= prio_t
+
+def calcular(pos):
+    pilha2 = Pilha()
+
+    for i in range(len(pos)):
+        carac = pos[i]
+        if carac >= "0" and carac <="9":
+            pilha2.push(carac)
+        else:
+            try:
+                unit1 = int(pilha2.pop())
+                unit2 = int(pilha2.pop())
+            except AttributeError:
+                print("Operador sobrando na Expressão")
+                exit()
+            result = operacao(carac,unit1,unit2)
+
+            if result:
+                pilha2.push(result)
+            else:
+                return "Operador Inválido"
+    resposta = pilha2.pop()
+    if pilha2.isEmpty():
+        return resposta
+    else:
+        return "Expressão Inválida"
+
