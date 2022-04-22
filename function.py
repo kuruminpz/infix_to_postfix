@@ -74,18 +74,15 @@ def isOperador(s):
 
 def prioridade(c, t):
     """Verifica a prioridade entre os operandos"""
-    if c == '$':
-        prio_c = 4
-    elif c == '*' or c == '/':
+
+    if c == '*' or c == '/':
         prio_c = 2
     elif c == '+' or c == '-':
         prio_c = 1
     else:
         prio_c = 4
 
-    if t == '$':
-        prio_t = 3
-    elif t == '*' or t == '/':
+    if t == '*' or t == '/':
         prio_t = 2
     elif t == '+' or t == '-':
         prio_t = 1
