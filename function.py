@@ -33,11 +33,11 @@ def operacao(op, op1, op2):
     if op == "+":
         return op1 + op2
     elif op == "-":
-        return op1 - op2
+        return op2 - op1
     elif op == "*":
         return op1 * op2
     elif op == "/":
-        return op1 / op2
+        return op2 / op1
     else:
         return False  # Retorna False caso o operando não seja válido
 
